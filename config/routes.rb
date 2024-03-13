@@ -19,23 +19,25 @@
 # end
 
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   root 'home#index'
+  get '/students/new', to: 'students#new'
+  post '/students', to: 'students#create'
   
   # Route for login (session creation)
-  devise_scope :user do
-    get '/login', to: 'devise/sessions#new'
-    post '/login', to: 'devise/sessions#create'
-  end
+  # devise_scope :user do
+  #   get '/login', to: 'devise/sessions#new'
+  #   post '/login', to: 'devise/sessions#create'
+  # end
 
-  # Route for sign-up (registration)
-  devise_scope :user do
-    get '/signup', to: 'devise/registrations#new'
-    post '/signup', to: 'devise/registrations#create'
-  end
+  # # Route for sign-up (registration)
+  # devise_scope :user do
+  #   get '/signup', to: 'devise/registrations#new'
+  #   post '/signup', to: 'devise/registrations#create'
+  # end
 
   # Define route for signing out
   delete '/users/sign_out', to: 'devise/sessions#destroy'

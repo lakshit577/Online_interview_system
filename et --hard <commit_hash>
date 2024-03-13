@@ -1,0 +1,41 @@
+[33mcommit 4364eef22ef406b832564a54e8679531af3e2307[m[33m ([m[1;36mHEAD -> [m[1;32madmin_user[m[33m, [m[1;31morigin/admin_user[m[33m)[m
+Author: lakshit <lakshitgupta218@gmail.com>
+Date:   Sun Mar 10 22:57:56 2024 +0530
+
+    added_enroll_and_start_button_for_the_user
+
+[33mcommit 57fef18a1acb6f35b7011ffb98a78126e365c8d1[m
+Author: lakshit gupta <lakshitgupta218@gmail.com>
+Date:   Fri Mar 8 11:34:28 2024 +0530
+
+    added question in active admin
+
+[33mcommit d57a55b1f1aa99581845aa2e1d73ca2b36bc962a[m
+Author: lakshit gupta <lakshitgupta218@gmail.com>
+Date:   Thu Mar 7 14:54:00 2024 +0530
+
+    active admin added with devise
+
+[33mcommit e849fc1fa38e979c8ad96f3fedbb63ebd8089c0a[m
+Author: lakshit gupta <lakshitgupta218@gmail.com>
+Date:   Fri Mar 1 18:54:18 2024 +0530
+
+    removed_devise_from_Gemfile.lock
+
+[33mcommit 2ad24b274db06f960b92073caf014261e030cbfd[m
+Author: lakshit gupta <lakshitgupta218@gmail.com>
+Date:   Fri Mar 1 18:45:58 2024 +0530
+
+    gem_devise_removed
+
+[33mcommit 04c45c7665f8a4a6e632fd8de61d30e00003d767[m[33m ([m[1;32mstudents[m[33m)[m
+Author: lakshit gupta <lakshitgupta218@gmail.com>
+Date:   Fri Mar 1 17:50:27 2024 +0530
+
+    added devise gem
+
+[33mcommit 30d89e2081909be82d893067bbb3cf1d9753bd74[m[33m ([m[1;32mmain[m[33m)[m
+Author: lakshit gupta <lakshitgupta218@gmail.com>
+Date:   Fri Mar 1 17:49:10 2024 +0530
+
+    first commit
