@@ -1,23 +1,3 @@
-# Rails.application.routes.draw do
-#   devise_for :users
-#   devise_for :admin_users, ActiveAdmin::Devise.config
-#   ActiveAdmin.routes(self)
-
-#   root 'home#index'
-#   # Define root path based on user authentication status
-#   # authenticated :user do
-#   #   root to: 'home#index', as: :authenticated_root
-#   # end
-
-#   get '/users/sign_in', to: redirect('/users/sign_in'), as: :unauthenticated_root
-
-  
-
-#   delete '/users/sign_out', to: 'devise/sessions#destroy'
-
-#   get 'home/index'
-# end
-
 Rails.application.routes.draw do
   # devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -26,20 +6,12 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/students/new', to: 'students#new'
   post '/students', to: 'students#create'
+  get 'questions', to: 'questions#index'
+  post 'questions/submit_answers', to: 'questions#submit_answers'
   
-  # Route for login (session creation)
-  # devise_scope :user do
-  #   get '/login', to: 'devise/sessions#new'
-  #   post '/login', to: 'devise/sessions#create'
-  # end
+  get 'results/create'
+  post 'results', to: 'results#create'
 
-  # # Route for sign-up (registration)
-  # devise_scope :user do
-  #   get '/signup', to: 'devise/registrations#new'
-  #   post '/signup', to: 'devise/registrations#create'
-  # end
-
-  # Define route for signing out
   delete '/users/sign_out', to: 'devise/sessions#destroy'
 
   get 'home/index'

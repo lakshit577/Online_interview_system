@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_13_105416) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_15_095122) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -37,13 +37,25 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_13_105416) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.text "question"
+  create_table "options", force: :cascade do |t|
+    t.integer "question_id", null: false
     t.string "option1"
     t.string "option2"
     t.string "option3"
     t.string "option4"
     t.integer "correct_option"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "results", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,4 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_13_105416) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "options", "questions"
 end

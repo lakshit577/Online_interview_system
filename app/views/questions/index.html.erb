@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Questions</h1>
+  <%= form_tag results_path, method: :post do %>
+    <% @questions.each_with_index do |question, index| %>
+      <div class="question">
+        <h2>Q<%= index + 1 %>: <%= question.question %></h2>
+        <% question.options.each do |option| %>
+          <div class="form-check">
+            <%= radio_button_tag "question_#{question.id}", option.id %>
+            <%= label_tag "question_#{question.id}", option.option1 %>
+            <%= radio_button_tag "question_#{question.id}", option.id %>
+            <%= label_tag "question_#{question.id}", option.option2 %>
+            <%= radio_button_tag "question_#{question.id}", option.id %>
+            <%= label_tag "question_#{question.id}", option.option3 %>
+            <%= radio_button_tag "question_#{question.id}", option.id %>
+            <%= label_tag "question_#{question.id}", option.option4 %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <%= submit_tag "Submit Answers" %>
+  <% end %>
+</div>
