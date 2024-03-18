@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   get 'questions', to: 'questions#index'
   post 'questions/submit_answers', to: 'questions#submit_answers'
   
-  get 'results/create'
-  post 'results', to: 'results#create'
+  # get 'results/create'
+  # post 'results', to: 'results#create'
+  get 'result', to: 'results#show'
 
   delete '/users/sign_out', to: 'devise/sessions#destroy'
 

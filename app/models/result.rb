@@ -1,2 +1,3 @@
 class Result < ApplicationRecord
-end
+    belongs_to :student
+  end

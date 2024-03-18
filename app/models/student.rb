@@ -1,3 +1,4 @@
 class Student < ApplicationRecord
-
-end
+    has_one :result
+  end
+  

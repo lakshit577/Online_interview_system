@@ -7,16 +7,18 @@ class StudentsController < ApplicationController
       @student = Student.new(student_params)
       # debugger
       if @student.save
-        redirect_to questions_path, notice: 'Student was successfully created.'
+        redirect_to questions_path(student_id: @student.id)
       else
         render :new
       end
     end
   
 
+
+
     private
     def student_params
-      params.require(:student).permit(:name, :age, :email, :fullname, :contact_number)
+      params.require(:student).permit(:fullname, :email, :contact_number)
     end
   end
-
+ 
