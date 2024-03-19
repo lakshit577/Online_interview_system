@@ -8,19 +8,19 @@
         <% question.options.each do |option| %>
           <div class="form-check">
             <% if option.option1.present? %>
-              <%= radio_button_tag "question_#{question.id}", option.id %>
+              <%= radio_button_tag "question_#{question.id}", option.option1 %>
               <%= label_tag "question_#{question.id}", option.option1 %><br>
             <% end %>
             <% if option.option2.present? %>
-              <%= radio_button_tag "question_#{question.id}", option.id %>
+              <%= radio_button_tag "question_#{question.id}", option.option2 %>
               <%= label_tag "question_#{question.id}", option.option2 %><br>
             <% end %>
             <% if option.option3.present? %>
-              <%= radio_button_tag "question_#{question.id}", option.id %>
+              <%= radio_button_tag "question_#{question.id}", option.option3 %>
               <%= label_tag "question_#{question.id}", option.option3 %><br>
             <% end %>
             <% if option.option4.present? %>
-              <%= radio_button_tag "question_#{question.id}", option.id %>
+              <%= radio_button_tag "question_#{question.id}", option.option4 %>
               <%= label_tag "question_#{question.id}", option.option4 %><br>
             <% end %>
           </div>
@@ -31,7 +31,6 @@
     <%= submit_tag "Submit Answers" %>
   <% end %>
 </div>
-
 
 
 <script>
@@ -49,7 +48,12 @@
     });
     if (!allQuestionsAnswered) {
       alert('Please answer all the questions.');
-      event.preventDefault(); // Prevent form submission
+      event.preventDefault();
     }
   });
 </script>
+
+
+
+
+
